@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <title>Post a Job</title>
+</head>
+<body>
+
+<div class="container mt-5">
+    <h2>Post a Job</h2>
+    <form method="post" action="{{ url_for('post_job') }}">
+        <div class="form-group">
+            <label for="job_role">Job Role:</label>
+            <input type="text" class="form-control" id="job_role" name="job_role" required>
+        </div>
+        <div class="form-group">
+            <label for="job_type">Job Type:</label>
+            <select class="form-control" id="job_type" name="job_type" required>
+                <option value="Full Time">Full Time</option>
+                <option value="Part Time">Part Time</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="skills_required">Skills Required:</label>
+            <textarea class="form-control" id="skills_required" name="skills_required" rows="4" required></textarea>
+        </div>
+        <div class="form-group">
+            <label for="num_employees">Number of Employees:</label>
+            <input type="number" class="form-control" id="num_employees" name="num_employees" required>
+        </div>
+        <div class="form-group">
+            <label for="num_openings">Number of Job Openings:</label>
+            <input type="number" class="form-control" id="num_openings" name="num_openings" required>
+        </div>
+        <div class="form-group">
+            <label for="company_description">About the Company:</label>
+            <textarea class="form-control" id="company_description" name="company_description" rows="4" required></textarea>
+        </div>
+        <div class="form-group">
+            <label for="responsibilities">Responsibilities:</label>
+            <textarea class="form-control" id="responsibilities" name="responsibilities" rows="4" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+
+</body>
+</html>

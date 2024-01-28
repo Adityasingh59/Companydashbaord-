@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Listings</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+            font-weight: bold;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        a {
+            display: block;
+            margin-top: 30px;
+            text-align: center;
+            text-decoration: none;
+            background-color: #4CAF50;
+            color: white;
+            padding: 14px 20px;
+            border: none;
+            border-radius: 4px;
+        }
+        a:hover {
+            background-color: #45a049;
+        }
+        .check-applicants-btn {
+            display: block;
+            text-align: center;
+            text-decoration: none;
+            background-color: #3498db;
+            color: white;
+            padding: 6px 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .check-applicants-btn:hover {
+            background-color: #2980b9;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Job Listings</h1>
+
+    {% if job_postings %}
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Job Role</th>
+                    <th>Job Type</th>
+                    <th>Skills Required</th>
+                    <th>Number of Employees</th>
+                    <th>Number of Openings</th>
+                    <th>Company Description</th>
+                    <th>Responsibilities</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for job in job_postings %}
+                    <tr>
+                        <td>{{ job.id }}</td>
+                        <td>{{ job.job_role }}</td>
+                        <td>{{ job.job_type }}</td>
+                        <td>{{ job.skills_required }}</td>
+                        <td>{{ job.num_employees }}</td>
+                        <td>{{ job.num_openings }}</td>
+                        <td>{{ job.company_description }}</td>
+                        <td>{{ job.responsibilities }}</td>
+                        <td>
+                            <a href="{{ url_for('check_applicants', job_id=job.id) }}" class="check-applicants-btn">Check Applicants</a>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <p>No job postings available.</p>
+    {% endif %}
+
+    <br>
+    <a href="{{ url_for('index') }}">Back to Home</a>
+
+</body>
+</html>

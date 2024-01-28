@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entered Details</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+
+<div class="container mt-5">
+    <h2>Entered Details</h2>
+    <ul>
+        <li><strong>Job Role:</strong> {{ job_role }}</li>
+        <li><strong>Job Type:</strong> {{ job_type }}</li>
+        <li><strong>Skills Required:</strong> {{ skills_required }}</li>
+        <li><strong>Number of Employees:</strong> {{ num_employees }}</li>
+        <li><strong>Number of Job Openings:</strong> {{ num_openings }}</li>
+        <li><strong>About the Company:</strong> {{ company_description }}</li>
+        <li><strong>Responsibilities:</strong>
+            <ul>
+                {% for responsibility in responsibilities %}
+                    <li>{{ responsibility }}</li>
+                {% endfor %}
+            </ul>
+        </li>
+    </ul>
+
+    <a href="{{ url_for('index') }}" class="btn btn-primary">Back to Home</a>
+</div>
+
+</body>
+</html>

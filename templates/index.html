@@ -1,0 +1,106 @@
+<!-- index.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Company Dashboard</title>
+
+    <style>
+        /* Reset some default styles and set a background color */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        /* Add some basic styling for the navigation bar */
+        nav {
+            background-color: #333;
+            overflow: hidden;
+        }
+
+        nav a {
+            float: left;
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+
+        nav a:hover {
+            background-color: #555;
+        }
+
+        h1 {
+            margin: 20px 0;
+            text-align: center;
+            color: #333;
+        }
+
+        /* Style the main content container */
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        /* Style the sections */
+        section {
+            margin-bottom: 30px;
+        }
+
+        section h2 {
+            color: #333;
+        }
+
+        section p {
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="{{ url_for('post_job') }}">Post a Job</a>
+        <a href="{{ url_for('view_students') }}">View Student Details</a>
+        <a href="{{ url_for('schedule_interview') }}">Schedule Interview</a>
+        <!-- Add a link to the placement analytics page -->
+        <a href="{{ url_for('placement_analytics') }}">Placement Analytics</a>
+    </nav>
+
+    <h1>Welcome to the Company Dashboard</h1>
+
+    <div class="container">
+
+        <!-- Post a Job Section -->
+        <section id="postJob">
+            <h2>Post a Job</h2>
+            <p>This is the content for the Post a Job section.</p>
+        </section>
+
+        <!-- View Student Details Section -->
+        <section id="viewStudents">
+            <h2>View Student Details</h2>
+            <p>This is the content for the View Student Details section.</p>
+        </section>
+
+        <!-- Schedule Interview Section -->
+        <section id="scheduleInterview">
+            <h2>Schedule Interview</h2>
+            <p>This is the content for the Schedule Interview section.</p>
+        </section>
+
+    </div>
+
+</body>
+</html>
